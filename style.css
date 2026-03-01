@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    max-width: 960px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 30px 20px;
 }
@@ -58,7 +58,7 @@ h2 {
 
 #crypto-container, #watchlist-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 25px;
 }
 
@@ -118,8 +118,7 @@ h2 {
     color: #f44336;
 }
 
-.add-to-watchlist-btn {
-    background: linear-gradient(45deg, #4caf50, #81c784);
+.add-to-watchlist-btn, .remove-from-watchlist-btn {
     color: white;
     border: none;
     padding: 10px 15px;
@@ -132,9 +131,22 @@ h2 {
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+.add-to-watchlist-btn {
+    background: linear-gradient(45deg, #4caf50, #81c784);
+}
+
 .add-to-watchlist-btn:hover {
     background: linear-gradient(45deg, #43a047, #66bb6a);
     box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.remove-from-watchlist-btn {
+    background: linear-gradient(45deg, #f44336, #ef5350);
+}
+
+.remove-from-watchlist-btn:hover {
+    background: linear-gradient(45deg, #e53935, #ef5350);
+    box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
 }
 
 .error-message {

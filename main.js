@@ -68,6 +68,11 @@ function renderWatchlist() {
     const watchlistData = cryptoData.filter(coin => watchlist.includes(coin.id));
     watchlistData.forEach(coin => {
         const coinElement = createCoinElement(coin);
+        const button = document.createElement('button');
+        button.classList.add('remove-from-watchlist-btn');
+        button.dataset.id = coin.id;
+        button.textContent = 'Remove';
+        coinElement.appendChild(button);
         watchlistContainer.appendChild(coinElement);
     });
 }
@@ -79,6 +84,13 @@ function addToWatchlist(coinId) {
         renderWatchlist();
         renderCryptoData(cryptoData);
     }
+}
+
+function removeFromWatchlist(coinId) {
+    watchlist = watchlist.filter(id => id !== coinId);
+    localStorage.setItem('watchlist', JSON.stringify(watchlist));
+    renderWatchlist();
+    renderCryptoData(cryptoData);
 }
 
 function updateTimestamp() {
@@ -96,6 +108,13 @@ cryptoContainer.addEventListener('click', (e) => {
     if (e.target.classList.contains('add-to-watchlist-btn')) {
         const coinId = e.target.dataset.id;
         addToWatchlist(coinId);
+    }
+});
+
+watchlistContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-from-watchlist-btn')) {
+        const coinId = e.target.dataset.id;
+        removeFromWatchlist(coinId);
     }
 });
 
