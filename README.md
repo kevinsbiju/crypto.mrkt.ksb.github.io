@@ -28,10 +28,11 @@ The application is built using a framework-less approach, relying on modern web 
 
 ### Deployment
 
-The application is deployed to GitHub Pages, providing a fast and secure way to serve the static content (HTML, CSS, and JavaScript).
+The application is deployed to GitHub Pages, providing a fast and secure way to serve the static content (HTML, CSS, and JavaScript). 
 
 ## How to Run Locally
 
 1.  Clone this repository.
 
 2.  Open the `index.html` file in your web browser.
+
